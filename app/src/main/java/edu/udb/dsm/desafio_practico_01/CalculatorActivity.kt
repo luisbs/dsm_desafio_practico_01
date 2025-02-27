@@ -6,12 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class PromedioActivity : AppCompatActivity() {
+class CalculatorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_promedio)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.promedio_main)) { v, insets ->
+        setContentView(R.layout.activity_calculator)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.calculator_main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets

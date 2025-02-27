@@ -23,13 +23,13 @@ class MainActivity : AppCompatActivity() {
         val salaryBtn: Button = findViewById(R.id.main_salary_btn)
         val calculatorBtn: Button = findViewById(R.id.main_calculator_btn)
 
-        gradesBtn.setOnClickListener { startActivity(Intent(this, PromedioActivity::class.java)) }
-        salaryBtn.setOnClickListener { startActivity(Intent(this, SalarioActivity::class.java)) }
+        gradesBtn.setOnClickListener { startActivity(Intent(this, GradesActivity::class.java)) }
+        salaryBtn.setOnClickListener { startActivity(Intent(this, SalaryActivity::class.java)) }
         calculatorBtn.setOnClickListener {
             startActivity(
                 Intent(
                     this,
-                    CalculadoraActivity::class.java
+                    CalculatorActivity::class.java
                 )
             )
         }

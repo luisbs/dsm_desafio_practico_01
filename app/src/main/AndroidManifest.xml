@@ -22,9 +22,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".PromedioActivity" />
-        <activity android:name=".SalarioActivity" />
-        <activity android:name=".CalculadoraActivity" />
+        <activity android:name=".GradesActivity" />
+        <activity android:name=".SalaryActivity" />
+        <activity android:name=".CalculatorActivity" />
     </application>
 
 </manifest>
