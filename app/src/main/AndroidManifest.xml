@@ -21,6 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".PromedioActivity" />
+        <activity android:name=".SalarioActivity" />
+        <activity android:name=".CalculadoraActivity" />
     </application>
 
 </manifest>
