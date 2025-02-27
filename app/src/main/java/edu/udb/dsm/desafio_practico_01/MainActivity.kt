@@ -1,6 +1,8 @@
 package edu.udb.dsm.desafio_practico_01
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -17,6 +19,19 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-//        startActivity(Intent(this, ))
+        val gradesBtn: Button = findViewById(R.id.main_grades_btn)
+        val salaryBtn: Button = findViewById(R.id.main_salary_btn)
+        val calculatorBtn: Button = findViewById(R.id.main_calculator_btn)
+
+        gradesBtn.setOnClickListener { startActivity(Intent(this, PromedioActivity::class.java)) }
+        salaryBtn.setOnClickListener { startActivity(Intent(this, SalarioActivity::class.java)) }
+        calculatorBtn.setOnClickListener {
+            startActivity(
+                Intent(
+                    this,
+                    CalculadoraActivity::class.java
+                )
+            )
+        }
     }
 }

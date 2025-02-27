@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">DSM Desafio Practico 01</string>
+    <string name="main_grades">Promedio de Notas</string>
+    <string name="main_salary">Salario de Empleado</string>
+    <string name="main_calculator">Calculadora Basica</string>
 </resources>
