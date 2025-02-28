@@ -1,7 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/calculator_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout style="@style/Vertical.Section">
+
+        <TextView
+            style="@style/Vertical.TextView"
+            android:labelFor="@id/cal_operand1"
+            android:text="@string/cal_operand1" />
+
+        <EditText
+            android:id="@+id/cal_operand1"
+            style="@style/Vertical.EditText"
+            android:ems="10"
+            android:inputType="numberDecimal" />
+
+    </LinearLayout>
+
+    <Space style="@style/Vertical.Spacer" />
+
+    <LinearLayout style="@style/Vertical.Section">
+
+        <TextView
+            style="@style/Vertical.TextView"
+            android:labelFor="@id/cal_operand2"
+            android:text="@string/cal_operand2" />
+
+        <EditText
+            android:id="@+id/cal_operand2"
+            style="@style/Vertical.EditText"
+            android:ems="10"
+            android:inputType="numberDecimal" />
+
+    </LinearLayout>
+
+    <Space style="@style/Vertical.Spacer" />
+
+    <LinearLayout style="@style/Vertical.Section">
+
+        <TextView
+            style="@style/Vertical.TextView"
+            android:labelFor="@id/cal_operator"
+            android:text="@string/cal_operator" />
+
+        <Spinner
+            android:id="@+id/cal_operator"
+            style="@style/Vertical.EditText" />
+    </LinearLayout>
+
+    <Space style="@style/Vertical.Spacer" />
+
+    <LinearLayout style="@style/Vertical.Section">
+
+        <TextView
+            style="@style/Vertical.TextView"
+            android:text="@string/cal_result" />
+
+        <TextView
+            android:id="@+id/cal_result"
+            style="@style/Vertical.EditText" />
+
+    </LinearLayout>
+
+</LinearLayout>
