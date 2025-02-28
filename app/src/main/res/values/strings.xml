@@ -8,15 +8,16 @@
     <string name="cal_operand2">Operando 2:</string>
     <string name="cal_operator">Operador:</string>
     <string name="cal_result">Resultado:</string>
-    <string name="cal_no_operand1">Operando 1 no es un numero</string>
-    <string name="cal_no_operand2">Operando 2 no es un numero</string>
-    <string name="cal_0division">(imposible dividir por 0)</string>
-
     <!-- Operators -->
     <string name="cal_add">Suma</string>
     <string name="cal_sub">Resta</string>
     <string name="cal_mul">Multiplicacion</string>
     <string name="cal_div">Division</string>
     <string name="cal_pow">Exponente</string>
-    <string name="cal_sqrt">Raiz Cuadrad</string>
+    <string name="cal_sqrt">Raiz Cuadrada</string>
+    <!-- Messages -->
+    <string name="cal_no_operand1">Operando 1 no es un numero</string>
+    <string name="cal_no_operand2">Operando 2 no es un numero</string>
+    <string name="cal_0division">(imposible dividir por 0)</string>
+    <string name="cal_negative_root">(raizes negativas son numeros complejos)</string>
 </resources>

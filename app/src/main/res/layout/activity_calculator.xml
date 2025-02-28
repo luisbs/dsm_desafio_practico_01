@@ -43,12 +43,46 @@
 
         <TextView
             style="@style/Vertical.TextView"
-            android:labelFor="@id/cal_operator"
             android:text="@string/cal_operator" />
 
-        <Spinner
-            android:id="@+id/cal_operator"
-            style="@style/Vertical.EditText" />
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:rowCount="2"
+            android:useDefaultMargins="true">
+
+            <RadioButton
+                android:id="@+id/cal_add"
+                style="@style/Vertical.TextView"
+                android:text="@string/cal_add" />
+
+            <RadioButton
+                android:id="@+id/cal_mul"
+                style="@style/Vertical.TextView"
+                android:text="@string/cal_mul" />
+
+            <RadioButton
+                android:id="@+id/cal_pow"
+                style="@style/Vertical.TextView"
+                android:text="@string/cal_pow" />
+
+            <RadioButton
+                android:id="@+id/cal_sub"
+                style="@style/Vertical.TextView"
+                android:text="@string/cal_sub" />
+
+            <RadioButton
+                android:id="@+id/cal_div"
+                style="@style/Vertical.TextView"
+                android:text="@string/cal_div" />
+
+            <RadioButton
+                android:id="@+id/cal_sqrt"
+                style="@style/Vertical.TextView"
+                android:text="@string/cal_sqrt" />
+
+        </GridLayout>
     </LinearLayout>
 
     <Space style="@style/Vertical.Spacer" />
