@@ -2,6 +2,7 @@ package edu.udb.dsm.desafio_practico_01
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -25,41 +26,50 @@ class GradesActivity : AppCompatActivity() {
         }
 
         resultOut = findViewById(R.id.tvResult)
+
+        // Obtener referencia al botón
+        val btnCalcular: Button = findViewById(R.id.btnCalcular)
+
+        // Configurar el evento de clic
+        btnCalcular.setOnClickListener {
+            calcularPromedio()
+        }
     }
 
     private fun calcularPromedio() {
         // Obtiene el nombre del estudiante y verifica que no esté vacío
-        val nombre: String = findViewById<TextInputLayout>(R.id.textStudentName).toString().trim()
+        val textInputLayout = findViewById<TextInputLayout>(R.id.textStudentName)
+        val nombre = textInputLayout.editText?.text.toString().trim()
+
         if (nombre.isEmpty()) {
             resultOut?.text = "Ingrese el nombre del estudiante"
             return
         }
-
-        // Obtiene y valida cada nota con su respectivo peso
-        val notasConPesos = listOf(
-            Pair(binding.etNota1.text.toString().trim(), 0.15),
-            Pair(binding.etNota2.text.toString().trim(), 0.15),
-            Pair(binding.etNota3.text.toString().trim(), 0.20),
-            Pair(binding.etNota4.text.toString().trim(), 0.25),
-            Pair(binding.etNota5.text.toString().trim(), 0.25)
+        // Mapeo de notas con sus respectivos pesos
+        val pesos = listOf(0.15, 0.15, 0.20, 0.25, 0.25)
+        val notasIds = listOf(
+            R.id.tilNota1, R.id.tilNota2, R.id.tilNota3,
+            R.id.tilNota4, R.id.tilNota5
         )
 
-        var suma = 0.0
-
-        for ((notaStr, peso) in notasConPesos) {
-            val nota = notaStr.toDoubleOrNull()
-            if (nota == null || nota < 0.0 || nota > 10.0) {
-                Toast.makeText(this, "Ingrese notas válidas (entre 0 y 10)", Toast.LENGTH_SHORT).show()
-                return
-            }
-            suma += nota * peso
+// Obtiene y valida las notas, luego calcula la suma ponderada
+        val suma = notasIds.zip(pesos).sumOf { (id, peso) ->
+            findViewById<TextInputLayout>(id).editText?.text.toString().trim().toDoubleOrNull()?.takeIf {
+                it in 0.0..10.0
+            }?.times(peso) ?: return Toast.makeText(this, "Ingrese notas válidas (entre 0 y 10)", Toast.LENGTH_SHORT).show().let { 0.0 }
         }
 
         // Calcula el promedio y determina el estado (umbral de aprobación: 6)
         val promedio = suma
         val estado = if (promedio >= 6.0) "Aprobado" else "Reprobado"
 
-        // Muestra el resultado en el TextView
-        resultOut?.text = "Estudiante: $nombre\nPromedio: ${"%.2f".format(promedio)}\nEstado: $estado"
+        // Formatear el resultado correctamente
+        val resultado = """
+    Estudiante: $nombre
+    Promedio: ${"%.2f".format(promedio)}
+    Estado: $estado
+""".trimIndent()
+
+        resultOut?.text = resultado
     }
 }
